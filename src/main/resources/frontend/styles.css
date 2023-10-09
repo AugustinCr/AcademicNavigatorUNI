@@ -1,0 +1,66 @@
+/*.data-container {
+    display: grid;
+    gap: 1.5em;
+    margin: 0 1.5em 0 1.5em;
+    margin-top: 77px;
+    grid-template-areas:
+    'year'
+    'term'
+    'course'
+    'section'
+    'instructor'
+    'enrolled'
+    'available'
+    'days'
+    'time'
+    'location';
+
+    .infobox {
+        background-color: #2e2e2e;
+        padding: 30px;
+        border-radius: 15px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #585858;
+
+    }
+}
+
+.dataYear {
+    grid-area: year;
+}
+.dataTerm {
+    grid-area: term;
+}
+.dataCourse {
+    grid-area: course;
+}
+.dataSection {
+    grid-area: section;
+}
+.dataInstructor {
+    grid-area: instructor;
+}
+.dataEnrolled {
+    grid-area: enrolled;
+}
+.dataAvailable {
+    grid-area: available;
+}
+.dataDays {
+    grid-area: days;
+}
+.dataTime {
+    grid-area: time;
+}
+.dataLocation {
+    grid-area: location;
+}
+
+
+@media (min-width: 57em) {
+    .header4-grid {
+        grid-template-areas:
+        'year term course section instructor enrolled available days time location';
+    }
+}*/

@@ -4,29 +4,28 @@ import jakarta.persistence.*;
 @Entity
 public class Course {
     @Id
-    @Column(name = "Id")
+    @Column
     private Long id;
-    @Column(name = "Year")
+    @Column
     private int year;
-    @Column(name = "Term")
+    @Column
     private String term;
-    @Column(name = "Course")
+    @Column
     private String course;
-    @Column(name = "Section")
+    @Column
     private String section;
-    @Column(name = "Instructor")
-    private String intructor;
-    @Column(name = "Enrollment")
+    @Column
+    private String instructor;
+    @Column
     private int enrolled;
-    @Column(name = "Availability")
+    @Column
     private int available;
-    @Column(name = "Days")
+    @Column
     private String days;
-    @Column(name = "Time")
+    @Column
     private String time;
-    @Column(name = "Location")
+    @Column
     private String location;
-
 
     public Long getId() {
         return id;
@@ -68,12 +67,12 @@ public class Course {
         this.section = section;
     }
 
-    public String getIntructor() {
-        return intructor;
+    public String getInstructor() {
+        return instructor;
     }
 
-    public void setIntructor(String intructor) {
-        this.intructor = intructor;
+    public void setInstructor(String instructor) {
+        this.instructor = instructor;
     }
 
     public int getEnrolled() {
@@ -116,4 +115,3 @@ public class Course {
         this.location = location;
     }
 }
-
