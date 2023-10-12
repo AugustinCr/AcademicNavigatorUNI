@@ -20,7 +20,28 @@ public class CourseService {
         return repository.findAllByInstructorContaining(chosenInstructorLast, chosenInstructorFirst);
     }
 
-    public List<Course> getAllCourses() {
+    public List<Course> filterByLocation(String chosenLocation) {
+        return repository.findAllByLocation(chosenLocation);
+    }
+
+
+    public List<Course> getCourses() {
         return repository.findAll();
+    }
+
+    public List<String> getTerms() {
+        return repository.findDistinctTerms();
+    }
+
+    public List<String> getLocations() {
+        return repository.findDistinctLocations();
+    }
+
+    public List<String> getInstructors() {
+        return repository.findDistinctInstructors();
+    }
+
+    public List<Course> filterCourses(String selectedTerm, String selectedInstructor, String selectedLocation) {
+        return repository.findAllByTermAndInstructorAndLocation(selectedTerm, selectedInstructor, selectedLocation);
     }
 }

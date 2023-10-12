@@ -3,16 +3,42 @@ package com.acnav.academicnavigator.Controller;
 import com.acnav.academicnavigator.Model.Course;
 import com.acnav.academicnavigator.Service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:63342")
 public class CourseRestController {
     @Autowired
     private CourseService service;
+
+    @GetMapping("/terms")
+    public List<String> getTerms() {
+        return service.getTerms();
+    }
+
+    @GetMapping("/instructors")
+    public List<String> getInstructors() {
+        return service.getInstructors();
+    }
+
+    @GetMapping("/locations")
+    public List<String> getLocations() {
+        return service.getLocations();
+    }
+
+    @GetMapping(value ="/courses")
+    public List<Course> getCourses() {
+        return service.getCourses();
+    }
+
+    @GetMapping(value ="/filter")
+    public List<Course> getFilteredCourses(@RequestParam("term") String selectedTerm,
+                                           @RequestParam("instructor") String selectedInstructor,
+                                           @RequestParam("location") String selectedLocation) {
+        return service.filterCourses(selectedTerm, selectedInstructor, selectedLocation);
+    }
 
     @GetMapping(value ="/term/{chosenTerm}")
     public List<Course> termFilter(@PathVariable String chosenTerm) {
@@ -24,8 +50,8 @@ public class CourseRestController {
         return service.filterByInstructor(chosenInstructorLast, chosenInstructorFirst);
     }
 
-    @GetMapping(value ="/courses")
-    public List<Course> allCourses() {
-        return service.getAllCourses();
+    @GetMapping(value ="/location/{chosenLocation}")
+    public List<Course> locationFilter(@PathVariable String chosenLocation) {
+        return service.filterByLocation(chosenLocation);
     }
 }
