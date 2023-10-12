@@ -1,7 +1,9 @@
 package com.acnav.academicnavigator.Repository;
 import com.acnav.academicnavigator.Model.Course;
+import jakarta.persistence.TypedQuery;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -25,6 +27,10 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
     @Query("SELECT DISTINCT entity.instructor FROM Course entity")
     List<String> findDistinctInstructors();
 
-    List<Course> findAllByTermAndInstructorAndLocation(String selectedTerm, String selectedInstructor, String selectedLocation);
+    @Query("SELECT entity FROM Course entity " +
+            "WHERE (:selectedTerm is null or entity.term = :selectedTerm) " +
+            "AND (:selectedInstructor is null or entity.instructor = :selectedInstructor) " +
+            "AND (:selectedLocation is null or entity.location = :selectedLocation) ")
+    List<Course> filterCourses(String selectedTerm, String selectedInstructor, String selectedLocation);
 }
 

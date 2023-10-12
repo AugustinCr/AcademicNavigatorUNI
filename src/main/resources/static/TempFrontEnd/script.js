@@ -53,10 +53,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedTerm = termFilter.value;
         const selectedLocation = locationFilter.value;
         const selectedInstructor = instructorFilter.value;
+        const queryParameters = [];
 
-        fetch(`http://localhost:8080/filter?term=${selectedTerm}&instructor=${selectedInstructor}&location=${selectedLocation}`)
-            .then(response => response.json())
-            .then(filteredCourses => updateTable(filteredCourses));
+        if (selectedTerm != "All") queryParameters.push(`term=${selectedTerm}`);
+        if (selectedInstructor != "All") queryParameters.push(`instructor=${selectedInstructor}`);
+        if (selectedLocation != "All") queryParameters.push(`location=${selectedLocation}`);
+
+        const queryString = queryParameters.join('&');
+
+        if (queryString != "") {
+            fetch(`http://localhost:8080/filter?${queryString}`)
+                .then(response => response.json())
+                .then(filteredCourses => updateTable(filteredCourses));
+        }
 
         function updateTable(filteredCourses) {
             tableBody.innerHTML = '';

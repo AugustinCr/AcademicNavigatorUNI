@@ -34,9 +34,9 @@ public class CourseRestController {
     }
 
     @GetMapping(value ="/filter")
-    public List<Course> getFilteredCourses(@RequestParam("term") String selectedTerm,
-                                           @RequestParam("instructor") String selectedInstructor,
-                                           @RequestParam("location") String selectedLocation) {
+    public List<Course> getFilteredCourses(@RequestParam(name = "term", required = false) String selectedTerm,
+                                               @RequestParam(name = "instructor", required = false) String selectedInstructor,
+                                               @RequestParam(name = "location", required = false) String selectedLocation) {
         return service.filterCourses(selectedTerm, selectedInstructor, selectedLocation);
     }
 

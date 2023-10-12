@@ -42,6 +42,6 @@ public class CourseService {
     }
 
     public List<Course> filterCourses(String selectedTerm, String selectedInstructor, String selectedLocation) {
-        return repository.findAllByTermAndInstructorAndLocation(selectedTerm, selectedInstructor, selectedLocation);
+        return repository.filterCourses(selectedTerm, selectedInstructor, selectedLocation);
     }
 }
