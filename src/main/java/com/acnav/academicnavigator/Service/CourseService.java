@@ -41,7 +41,11 @@ public class CourseService {
         return repository.findDistinctInstructors();
     }
 
-    public List<Course> filterCourses(String selectedTerm, String selectedInstructor, String selectedLocation) {
-        return repository.filterCourses(selectedTerm, selectedInstructor, selectedLocation);
+    public List<String> getDays() {
+        return repository.findDistinctDays();
+    }
+
+    public List<Course> filterCourses(String selectedTerm, String selectedInstructor, String selectedLocation, String selectedDay) {
+        return repository.filterCourses(selectedTerm, selectedInstructor, selectedLocation, selectedDay);
     }
 }

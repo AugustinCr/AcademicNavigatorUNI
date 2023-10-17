@@ -13,6 +13,11 @@ public class CourseRestController {
     @Autowired
     private CourseService service;
 
+    @GetMapping(value ="/courses")
+    public List<Course> getCourses() {
+        return service.getCourses();
+    }
+
     @GetMapping("/terms")
     public List<String> getTerms() {
         return service.getTerms();
@@ -28,16 +33,17 @@ public class CourseRestController {
         return service.getLocations();
     }
 
-    @GetMapping(value ="/courses")
-    public List<Course> getCourses() {
-        return service.getCourses();
+    @GetMapping("/days")
+    public List<String> getDays() {
+        return service.getDays();
     }
 
     @GetMapping(value ="/filter")
     public List<Course> getFilteredCourses(@RequestParam(name = "term", required = false) String selectedTerm,
-                                               @RequestParam(name = "instructor", required = false) String selectedInstructor,
-                                               @RequestParam(name = "location", required = false) String selectedLocation) {
-        return service.filterCourses(selectedTerm, selectedInstructor, selectedLocation);
+                                           @RequestParam(name = "instructor", required = false) String selectedInstructor,
+                                           @RequestParam(name = "location", required = false) String selectedLocation,
+                                           @RequestParam(name = "day", required = false) String selectedDay) {
+        return service.filterCourses(selectedTerm, selectedInstructor, selectedLocation, selectedDay);
     }
 
     @GetMapping(value ="/term/{chosenTerm}")

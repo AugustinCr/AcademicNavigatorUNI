@@ -16,8 +16,6 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
 
     List<Course> findAllByLocation(String chosenLocation);
 
-
-    // Dropdown
     @Query("SELECT DISTINCT entity.term FROM Course entity")
     List<String> findDistinctTerms();
 
@@ -27,10 +25,14 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
     @Query("SELECT DISTINCT entity.instructor FROM Course entity")
     List<String> findDistinctInstructors();
 
+    @Query("SELECT DISTINCT entity.days FROM Course entity")
+    List<String> findDistinctDays();
+
     @Query("SELECT entity FROM Course entity " +
             "WHERE (:selectedTerm is null or entity.term = :selectedTerm) " +
             "AND (:selectedInstructor is null or entity.instructor = :selectedInstructor) " +
-            "AND (:selectedLocation is null or entity.location = :selectedLocation) ")
-    List<Course> filterCourses(String selectedTerm, String selectedInstructor, String selectedLocation);
+            "AND (:selectedLocation is null or entity.location = :selectedLocation) " +
+            "AND (:selectedDay is null or entity.days = :selectedDay) ")
+    List<Course> filterCourses(String selectedTerm, String selectedInstructor, String selectedLocation, String selectedDay);
 }
 

@@ -2,8 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const termFilter = document.getElementById('termFilter');
     const instructorFilter = document.getElementById('instructorFilter');
     const locationFilter = document.getElementById('locationFilter');
+    const dayFilter = document.getElementById('dayFilter');
     const table = document.getElementById('courseTable');
     const tableBody = table.querySelector('tbody');
+
+    fetch('http://localhost:8080/courses')
+        .then(response => response.json())
+        .then(courses => populateCourseTable(courses));
 
     fetch('http://localhost:8080/terms')
         .then(response => response.json())
@@ -17,9 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(locations => populateDropdown(locationFilter, locations));
 
-    fetch('http://localhost:8080/courses')
+    fetch('http://localhost:8080/days')
         .then(response => response.json())
-        .then(courses => populateCourseTable(courses));
+        .then(days => populateDropdown(dayFilter, days));
+
 
     function populateCourseTable(courses) {
         courses.forEach(course => {
@@ -53,11 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedTerm = termFilter.value;
         const selectedLocation = locationFilter.value;
         const selectedInstructor = instructorFilter.value;
+        const selectedDay = dayFilter.value;
         const queryParameters = [];
 
         if (selectedTerm != "All") queryParameters.push(`term=${selectedTerm}`);
         if (selectedInstructor != "All") queryParameters.push(`instructor=${selectedInstructor}`);
         if (selectedLocation != "All") queryParameters.push(`location=${selectedLocation}`);
+        if (selectedDay != "All") queryParameters.push(`day=${selectedDay}`);
 
         const queryString = queryParameters.join('&');
 
