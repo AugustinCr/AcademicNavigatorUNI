@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+    background-color: rgba(252, 252, 252, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+/* Styles for the header section */
+.header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 90px;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+/* Styles for individual menu items in the header */
+.menu a {
+    margin-right: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for anchor links */
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.site-title {
+    font-size: 60px;
+    font-weight: bold;
+    margin: 50px 0;
+}
+
+.search-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.input-group label {
+    font-size: 16px;
+    margin-right: 80px; /* Increase margin-right for additional spacing */
+    width: 150px;
+    text-align: right;
+}
+
+/* Styles for search input fields and dropdowns */
+.search-input, .search-dropdown {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.search-input::placeholder {
+    color: #888;
+}
+
+.search-button {
+    margin-top: 30px;
+}
+
+.wrapper {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+.content h2 {
+    font-size: 35px;
+}
+
+/* help.html portion */
+.content h1 {
+    font-size: 60px;
+    margin: 50px;
+}
+
+.campus img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.campus-container {
+    width: 330px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.campus {
+    text-align: center;
+    margin-right: 40px;
+}
+
+.campus h2 {
+    max-height: 3em; /* Limit h2 to 3 lines */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.campus p {
+    text-align: center;
+}

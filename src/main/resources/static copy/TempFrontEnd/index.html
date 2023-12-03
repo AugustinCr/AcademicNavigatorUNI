@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Navigator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="filtersContainer">
+        <label for="termFilter">Term:</label>
+        <select id="termFilter">
+            <option value="All">All</option>
+        </select>
+
+        <label for="instructorFilter">Instructor:</label>
+        <select id="instructorFilter">
+            <option value="All">All</option>
+        </select>
+
+        <label for="locationFilter">Location:</label>
+        <select id="locationFilter">
+            <option value="All">All</option>
+        </select>
+
+        <label for="dayFilter">Days:</label>
+        <select id="dayFilter">
+            <option value="All">All</option>
+        </select>
+
+        <button id="filterButton">Apply</button>
+    </div>
+
+    <table id="courseTable">
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Term</th>
+                <th>Course</th>
+                <th>Section</th>
+                <th>Instructor</th>
+                <th>Enrolled</th>
+                <th>Available</th>
+                <th>Days</th>
+                <th>Time</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody id="courseTableBody"></tbody>
+    </table>
+</body>
+</html>
