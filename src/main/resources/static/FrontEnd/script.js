@@ -18,3 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "search-result.html" + searchQuery;
     });
 });
+=======
+document.addEventListener('DOMContentLoaded', function() {
+
+});
+
