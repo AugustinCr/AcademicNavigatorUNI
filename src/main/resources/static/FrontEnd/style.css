@@ -8,13 +8,10 @@ body {
     align-items: center;
     justify-content: center;
     height: 90vh;
-    position: absolute;
+    position: relative;
     width: 100px;
 }
 
-.background{
-    position: relative;
-}
 
 /* Styles for the header section */
 .header {
