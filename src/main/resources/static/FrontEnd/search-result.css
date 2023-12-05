@@ -4,7 +4,7 @@ body {
     padding: 0;
     font-family: merriweather;
 }
-   
+
 
 
 
@@ -34,31 +34,34 @@ body {
     text-decoration: underline;
 }
 
-.content {
-    text-align: center;
-    padding-top: 100px;
-    
+label {
+    color: #eab308;
+    margin-right: 0.5rem;
 }
 
-.result-table {
-    width: 90px;
-    margin: 10 auto;
+select {
+    border-color: #eab308;
+    background: transparent;
+    color: #868686;
+    margin-right: 1.2rem;
+}
+
+table {
     border-collapse: collapse;
-    border: 10px solid rgba(221, 8, 8, 0.8);
-    
+    width: 100%;
+    background: #3f3f3f;
 }
 
-.result-table th, .result-table td {
-    border: 1px solid rgba(243, 0, 0, 0.952);
-    padding: 15px;
-    
+th, td {
+    text-align: left;
+    padding: 0.5rem;
+    color: white;
 }
 
-.result-table th {
-    background-color: #ec000059;
+th {
+    background: #2a2a2a;
 }
 
-.course-table{
-background-color: rgb(177, 177, 177);
-
+tr:nth-of-type(2n) {
+    background: #343434;
 }
