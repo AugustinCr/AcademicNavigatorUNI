@@ -4,6 +4,10 @@ body {
     padding: 0;
     font-family: merriweather;
 }
+   
+
+
+
 
 .header {
     display: flex;
@@ -33,21 +37,28 @@ body {
 .content {
     text-align: center;
     padding-top: 100px;
+    
 }
 
 .result-table {
-    width: 90%;
-    margin: 0 auto;
+    width: 90px;
+    margin: 10 auto;
     border-collapse: collapse;
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    border: 10px solid rgba(221, 8, 8, 0.8);
+    
 }
 
 .result-table th, .result-table td {
-    border: 1px solid rgba(0, 0, 0, 0.952);
+    border: 1px solid rgba(243, 0, 0, 0.952);
     padding: 15px;
+    
 }
 
 .result-table th {
-    background-color: #eeeeee59;
+    background-color: #ec000059;
 }
 
+.course-table{
+background-color: rgb(177, 177, 177);
+
+}
