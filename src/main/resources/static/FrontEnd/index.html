@@ -6,6 +6,19 @@
 <html lang="en">
 
 <head>
+
+    <title>Academic Navigator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&family=Poppins&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+
+
     <meta charset="UTF-8">
     <meta name="description" content="A web application for students, where they can easily search for 
         available courses without the need of logging through the two-step authentication method to 
@@ -14,18 +27,59 @@
     <title>Academic Navigator</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="main.js"></script>
+
+
+    <style>
+        .header{
+            background-color: black;
+            height: 100px;
+        }
+        
+    
+        .search-button{
+           background-color: orange;
+           
+        }
+        
+        .wrapper{
+            background-color: rgb(255, 255, 255);
+            width: 1000px;
+            height: 500px;
+            margin-left: 1800px;
+            position: fixed;
+            margin-top: 200px;
+            font-family: merriweather;
+        }
+        
+        .background{
+            position: fixed;
+            width: 3000px;
+            height: 1100px;
+            margin-left: 1000px;
+            padding-left: 100px;
+            
+        }
+
+        
+    </style>
+        
 </head>
 
 <body>
+ 
+ <img src="images/students in background.png" class="background">
+
 <div class="wrapper">
     <div class="header">
+        
         <div class="menu">
-            <a href="about.html">ABOUT</a>
-            <a href="help.html">HELP</a>
-            <a href="https://login.fiu.edu/" target="_blank">MyFIU</a>
-            <a href="#save">SAVE</a>
+            <a href="about.html" style="color: white;">ABOUT</a>
+            <a href="help.html" style="color: white;">HELP</a>
+            <a href="https://login.fiu.edu/" target="_blank" style="color: white;">MyFIU</a>
+            <a href="#save" style="color: white;">SAVE</a>
         </div>
     </div>
+    
     <div class="content">
         <h1 class="site-title">Academic Navigator</h1>
         <div class="search-box">
@@ -54,10 +108,16 @@
                 </select>
             </div>
             <div class="input-group">
-                <button id="search-button">Search</button>
+                <button id="search-button" style="background-color: orange; border-color: transparent; width: 100px; height: 20; font-family: poppins;">Search</button>
             </div>
         </div>
+        
     </div>
+    
 </div>
+
+
+
+
 </body>
 </html>
